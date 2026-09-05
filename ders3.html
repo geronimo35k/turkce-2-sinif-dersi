@@ -162,13 +162,6 @@
             border-radius: 8px;
             margin-bottom: 10px;
             border-left: 4px solid #4caf50;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .speech-option:hover {
-            background: #c8e6c9;
-            transform: translateX(5px);
         }
         
         .instruction-box {
@@ -192,10 +185,6 @@
             margin: 15px 0;
         }
         
-        .tip-box strong {
-            color: #e65100;
-        }
-        
         .sound-button {
             background: #FF6B6B;
             color: white;
@@ -214,8 +203,21 @@
             transform: scale(1.05);
         }
         
-        .sound-button:active {
-            transform: scale(0.95);
+        .story-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 15px 0;
+            width: 100%;
+            font-weight: bold;
+        }
+        
+        .story-button:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -233,13 +235,15 @@
             <div class="section-title">🎧 Bölüm 1: Sesli Hikaye (İsınma)</div>
             
             <div class="instruction-box">
-                <p>💡 Dikkatli dinle ve hikayeyi anlamaya çalış!</p>
+                <p>💡 Aşağıdaki BUTON'u tıkla ve hikayeyi sesli olarak DİNLE!</p>
             </div>
             
             <div class="story-box">
                 <strong>📖 Hikaye: "Murat'ın Mutlu Günü"</strong>
                 <p style="margin-top: 15px;">Bir gün, Murat pencereden dışarı bakıyor. 🪟 Bahçede kedi ve kuş oynuyor. 🐱 🐦 Kedi, kuşu kovalıyor. Kuş ağaca kaçıyor. 🌳 Kedi mıyavlıyor. 🐾 Murat gülüyor. 😄 Babası gelip Murat'a sarılıyor. 🤗 Herkes mutlu! Güzel bir gün bitti. 🌙</p>
             </div>
+            
+            <button class="story-button" onclick="readStory()">🔊 HİKAYEYİ SESLE OKU</button>
             
             <div class="activity-box">
                 <h3>Hikayeyi Anladın mı? Soruları Cevapla!</h3>
@@ -266,7 +270,7 @@
             <div class="section-title">🔊 Bölüm 2: Ses Tanıma Oyunu</div>
             
             <div class="instruction-box">
-                <p>🎵 Aşağıdaki sesleri dinle ve ne olduğunu söyle! (Ses simülasyon için emoji kullan)</p>
+                <p>🎵 Aşağıdaki sesleri DİNLE ve ne olduğunu söyle!</p>
             </div>
             
             <div class="activity-box">
@@ -275,40 +279,40 @@
                 <div class="question-box">
                     <p>Ses 1: Kuş Sesi 🐦</p>
                     <div class="image-container">
-                        <div class="emoji-image">🐦 çiuit çiuit!</div>
+                        <div class="emoji-image">🐦</div>
                     </div>
-                    <button class="sound-button" onclick="playBirdSound()">🔊 Ses Dinle</button>
-                    <p><em>Bu ses ne? Kimin sesini duyuyor musun?</em></p>
+                    <button class="sound-button" onclick="playBirdSound()">🔊 KUŞU DİNLE</button>
+                    <p><em>Bu ses ne?</em></p>
                     <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
                     <p>Ses 2: Araba Sesi 🚗</p>
                     <div class="image-container">
-                        <div class="emoji-image">🚗 viiiin!</div>
+                        <div class="emoji-image">🚗</div>
                     </div>
-                    <button class="sound-button" onclick="playCarSound()">🔊 Ses Dinle</button>
-                    <p><em>Bu ses ne? Nereden geliyor?</em></p>
+                    <button class="sound-button" onclick="playCarSound()">🔊 ARABAY DİNLE</button>
+                    <p><em>Bu ses ne?</em></p>
                     <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
                     <p>Ses 3: Kapı Sesi 🚪</p>
                     <div class="image-container">
-                        <div class="emoji-image">🚪 tok tok!</div>
+                        <div class="emoji-image">🚪</div>
                     </div>
-                    <button class="sound-button" onclick="playDoorSound()">🔊 Ses Dinle</button>
-                    <p><em>Bu ses ne? Nerede oluyor?</em></p>
+                    <button class="sound-button" onclick="playDoorSound()">🔊 KAPIYI DİNLE</button>
+                    <p><em>Bu ses ne?</em></p>
                     <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
                     <p>Ses 4: Yağmur Sesi 🌧️</p>
                     <div class="image-container">
-                        <div class="emoji-image">🌧️ şış şış!</div>
+                        <div class="emoji-image">🌧️</div>
                     </div>
-                    <button class="sound-button" onclick="playRainSound()">🔊 Ses Dinle</button>
-                    <p><em>Bu ses ne? Ne hava var?</em></p>
+                    <button class="sound-button" onclick="playRainSound()">🔊 YAĞMURU DİNLE</button>
+                    <p><em>Bu ses ne?</em></p>
                     <input type="text" placeholder="Cevap yaz...">
                 </div>
             </div>
@@ -319,42 +323,29 @@
             <div class="section-title">🎤 Bölüm 3: Kendini Tanıt!</div>
             
             <div class="instruction-box">
-                <p>💬 Aşağıdaki cümleleri yüksek sesle söyle!</p>
+                <p>💬 Aşağıdaki cümleleri YÜKSEK SESLE SÖY!</p>
             </div>
             
             <div class="activity-box">
-                <h3>Kendini Tanıt - Şablonlar</h3>
+                <h3>Kendini Tanıt</h3>
                 
                 <div class="speech-option">
-                    <strong>Şablon 1:</strong>
-                    <p>"Benim adım _______."</p>
-                    <input type="text" placeholder="Kendi adını yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">👉 Yüksek sesle söyle!</p>
+                    <p><strong>"Benim adım _______."</strong></p>
+                    <input type="text" placeholder="Adını yaz - Sonra yüksek sesle söyle">
                 </div>
                 
                 <div class="speech-option">
-                    <strong>Şablon 2:</strong>
-                    <p>"Ben _______ yaşındayım."</p>
-                    <input type="text" placeholder="Kendi yaşını yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">👉 Yüksek sesle söyle!</p>
+                    <p><strong>"Ben _______ yaşındayım."</strong></p>
+                    <input type="text" placeholder="Yaşını yaz - Sonra yüksek sesle söyle">
                 </div>
                 
                 <div class="speech-option">
-                    <strong>Şablon 3:</strong>
-                    <p>"Ben _______ seviyorum."</p>
-                    <input type="text" placeholder="Sevdiğin bir şey yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">👉 Yüksek sesle söyle!</p>
-                </div>
-                
-                <div class="speech-option">
-                    <strong>Şablon 4:</strong>
-                    <p>"Benim en iyi arkadaşım _______."</p>
-                    <input type="text" placeholder="Arkadaşının adını yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">👉 Yüksek sesle söyle!</p>
+                    <p><strong>"Ben _______ seviyorum."</strong></p>
+                    <input type="text" placeholder="Sevdiğin şeyi yaz - Sonra yüksek sesle söyle">
                 </div>
                 
                 <div class="tip-box">
-                    <strong>💡 İpucu:</strong> Bu cümleleri yüksek ve açık sesle söyle. Harf harf doğru telaffuz et!
+                    <strong>💡 Dikkat:</strong> Yüksek sesle, net ve açık konuş!
                 </div>
             </div>
         </div>
@@ -364,132 +355,82 @@
             <div class="section-title">🖼️ Bölüm 4: Emojileri Anlat!</div>
             
             <div class="instruction-box">
-                <p>🎨 Aşağıdaki emojileri gör ve 2-3 cümle ile anlat!</p>
+                <p>🎨 Resimleri gör ve 2-3 cümle ile ANLAT!</p>
             </div>
             
             <div class="activity-box">
                 <h3>Emoji 1: Oyun Oynayan Çocuklar</h3>
                 <div class="image-container">
                     <div class="emoji-image">👧⚽🧒</div>
-                    <p><strong>Çocuklar oyun oynuyor</strong></p>
                 </div>
                 <p><strong>Bu resimde ne yapılıyor? Anlat:</strong></p>
-                <textarea placeholder="Resimi anlat..."></textarea>
-                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+                <textarea placeholder="Yazı yaz..."></textarea>
+                <button onclick="alert('Harika! 🌟')">Tamam</button>
             </div>
             
             <div class="activity-box">
-                <h3>Emoji 2: Kütüphane</h3>
+                <h3>Emoji 2: Kitap Okuma</h3>
                 <div class="image-container">
                     <div class="emoji-image">📚📖👦</div>
-                    <p><strong>Kütüphanede kitap okuma</strong></p>
                 </div>
-                <p><strong>Bu resimde ne görüyorsun? Anlat:</strong></p>
-                <textarea placeholder="Resimi anlat..."></textarea>
-                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+                <p><strong>Bu resimde ne var? Anlat:</strong></p>
+                <textarea placeholder="Yazı yaz..."></textarea>
+                <button onclick="alert('Harika! 🌟')">Tamam</button>
             </div>
             
             <div class="activity-box">
                 <h3>Emoji 3: Hayvanlar</h3>
                 <div class="image-container">
                     <div class="emoji-image">🐕🐈🐦</div>
-                    <p><strong>Çeşitli hayvanlar</strong></p>
                 </div>
-                <p><strong>Bu resimde ne görüyorsun? Anlat:</strong></p>
-                <textarea placeholder="Resimi anlat..."></textarea>
-                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+                <p><strong>Bu resimde ne var? Anlat:</strong></p>
+                <textarea placeholder="Yazı yaz..."></textarea>
+                <button onclick="alert('Harika! 🌟')">Tamam</button>
             </div>
         </div>
         
         <!-- BÖLÜM 5 -->
         <div class="section">
-            <div class="section-title">❓ Bölüm 5: Soru-Cevap Oyunu</div>
-            
-            <div class="instruction-box">
-                <p>🗣️ Aşağıdaki soruları cevapla!</p>
-            </div>
+            <div class="section-title">❓ Bölüm 5: Soru-Cevap</div>
             
             <div class="activity-box">
                 <h3>Kendine Sorular</h3>
                 
                 <div class="question-box">
-                    <p>1️⃣ Adın ne?</p>
-                    <input type="text" placeholder="Cevap: ...">
+                    <p>1. Adın ne?</p>
+                    <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
-                    <p>2️⃣ Kaç yaşındasın?</p>
-                    <input type="text" placeholder="Cevap: ...">
+                    <p>2. Kaç yaşındasın?</p>
+                    <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
-                    <p>3️⃣ En iyi arkadaşın kimdir?</p>
-                    <input type="text" placeholder="Cevap: ...">
+                    <p>3. En iyi arkadaşın kimdir?</p>
+                    <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
-                    <p>4️⃣ Neyi seviyorsun?</p>
-                    <input type="text" placeholder="Cevap: ...">
+                    <p>4. Neyi seviyorsun?</p>
+                    <input type="text" placeholder="Cevap yaz...">
                 </div>
                 
                 <div class="question-box">
-                    <p>5️⃣ Okulda ne yapıyorsun?</p>
-                    <input type="text" placeholder="Cevap: ...">
-                </div>
-            </div>
-        </div>
-        
-        <!-- BÖLÜM 6 -->
-        <div class="section">
-            <div class="section-title">🌟 Bölüm 6: "Benim Favorim"</div>
-            
-            <div class="instruction-box">
-                <p>💬 Favori şeylerini söyle ve cümle yaz!</p>
-            </div>
-            
-            <div class="activity-box">
-                <h3>Favori Şeyler</h3>
-                
-                <div class="question-box">
-                    <p>Favori Rengim: 🎨</p>
-                    <input type="text" placeholder="Favori rengini yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori rengim mavi."</p>
-                </div>
-                
-                <div class="question-box">
-                    <p>Favori Hayvanım: 🐾</p>
-                    <input type="text" placeholder="Favori hayvanını yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori hayvanım köpek."</p>
-                </div>
-                
-                <div class="question-box">
-                    <p>Favori Yemeğim: 🍕</p>
-                    <input type="text" placeholder="Favori yemeğini yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori yemeğim makarna."</p>
-                </div>
-                
-                <div class="question-box">
-                    <p>Favori Oyunum: ⚽</p>
-                    <input type="text" placeholder="Favori oyununu yaz">
-                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori oyunum futbol."</p>
+                    <p>5. Okulda ne yapıyorsun?</p>
+                    <input type="text" placeholder="Cevap yaz...">
                 </div>
             </div>
         </div>
         
         <!-- TAMAMLAMA -->
         <div class="section">
-            <div class="section-title">🎊 Tüm Dersleri Tamamladın!</div>
+            <div class="section-title">🎊 Tamamlandı!</div>
             <div class="activity-box">
                 <h2 style="color: #4facfe; text-align: center;">🏆 TEBRİKLER! 🏆</h2>
-                <p style="text-align: center; font-size: 1.1em; margin: 20px 0;">Türkçe dersinin 3 saatini başarıyla tamamladın!</p>
+                <p style="text-align: center; font-size: 1.1em; margin: 20px 0;">Türkçe dersinin 3 saatini tamamladın!</p>
                 
-                <div style="text-align: center; margin: 20px 0;">
-                    <p>✅ Ders 1: Okuma ve Anlama</p>
-                    <p>✅ Ders 2: Yazma ve İfade Etme</p>
-                    <p>✅ Ders 3: Dinleme ve Konuşma Becerisi</p>
-                </div>
-                
-                <p style="text-align: center; font-size: 1.1em; color: #4facfe; font-weight: bold;">Harika bir öğrenci oldun! 🌟⭐✨</p>
+                <p style="text-align: center; font-size: 1.1em; color: #4facfe; font-weight: bold;">Çok güzel! 🌟⭐✨</p>
                 
                 <div style="text-align: center; margin-top: 20px;">
                     <button onclick="window.location.href='index.html'">← Ana Sayfaya Dön</button>
@@ -499,51 +440,55 @@
     </div>
 
     <script>
-        // Ses efektleri için Web Audio API
-        function playSound(frequency, duration, type = 'sine') {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
+        // Hikayeyi sesle oku
+        function readStory() {
+            const text = "Bir gün Murat pencereden dışarı bakıyor. Bahçede kedi ve kuş oynuyor. Kedi kuşu kovalıyor. Kuş ağaca kaçıyor. Kedi mıyavlıyor. Murat gülüyor. Babası Murata sarılıyor. Herkes mutlu. Güzel bir gün bitti.";
             
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
+            const msg = new SpeechSynthesisUtterance(text);
+            msg.lang = 'tr-TR';
+            msg.rate = 0.8;
+            msg.pitch = 1.0;
+            msg.volume = 1.0;
             
-            oscillator.frequency.value = frequency;
-            oscillator.type = type;
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + duration);
+            speechSynthesis.speak(msg);
         }
         
+        // Ses efektleri
         function playBirdSound() {
-            // Kuş sesi - yüksek frekanslar
-            playSound(800, 0.2);
-            setTimeout(() => playSound(900, 0.15), 250);
-            setTimeout(() => playSound(850, 0.2), 500);
-            alert('🐦 Çiuit çiuit! Kuş sesini duydun! 🎵');
+            makeSound(800, 0.2);
+            setTimeout(() => makeSound(900, 0.15), 250);
+            setTimeout(() => makeSound(850, 0.2), 500);
         }
         
         function playCarSound() {
-            // Araba sesi - alçak frekans
-            playSound(400, 0.5, 'sawtooth');
-            setTimeout(() => playSound(450, 0.5, 'sawtooth'), 600);
-            alert('🚗 Viiiin! Araba sesini duydun! 🎵');
+            makeSound(200, 0.8);
         }
         
         function playDoorSound() {
-            // Kapı sesi - orta frekans
-            playSound(300, 0.3);
-            setTimeout(() => playSound(280, 0.3), 400);
-            alert('🚪 Tok tok! Kapı sesini duydun! 🎵');
+            makeSound(300, 0.2);
+            setTimeout(() => makeSound(250, 0.2), 250);
         }
         
         function playRainSound() {
-            // Yağmur sesi - beyaz gürültü simülasyonu
-            playSound(200, 0.8, 'square');
-            setTimeout(() => playSound(250, 0.8, 'square'), 400);
-            alert('🌧️ Şış şış! Yağmur sesini duydun! 🎵');
+            makeSound(150, 1.5);
+        }
+        
+        function makeSound(freq, dur) {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + dur);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + dur);
+            } catch(e) {}
         }
     </script>
 </body>
