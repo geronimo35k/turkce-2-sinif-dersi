@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 3: Dinleme ve Konuşma Becerisi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #00f2fe;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            color: #4facfe;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .activity-box {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4facfe;
+        }
+        
+        .story-box {
+            background: #e0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00f2fe;
+            margin: 20px 0;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .question-box {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .question-box p {
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 5px rgba(79, 172, 254, 0.3);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        button {
+            background: #4facfe;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #00f2fe;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #999;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #666;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .speech-option {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4caf50;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .speech-option:hover {
+            background: #c8e6c9;
+            transform: translateX(5px);
+        }
+        
+        .instruction-box {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #9c27b0;
+            margin-bottom: 20px;
+        }
+        
+        .instruction-box p {
+            color: #6a1b9a;
+            font-weight: bold;
+        }
+        
+        .tip-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            margin: 15px 0;
+        }
+        
+        .tip-box strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Geri Dön</a>
+        
+        <header>
+            <h1>🎤 Ders 3: Dinleme ve Konuşma Becerisi</h1>
+            <p class="subtitle">⏱️ 40 Dakika</p>
+        </header>
+        
+        <!-- BÖLÜM 1 -->
+        <div class="section">
+            <div class="section-title">🎧 Bölüm 1: Sesli Hikaye (İsınma)</div>
+            
+            <div class="instruction-box">
+                <p>💡 Dikkatli dinle ve hikayeyi anlamaya çalış!</p>
+            </div>
+            
+            <div class="story-box">
+                <strong>📖 Hikaye: "Murat'ın Mutlu Günü"</strong>
+                <p style="margin-top: 15px;">Bir gün, Murat pencereden dışarı bakıyor. Bahçede kedi ve kuş oynuyor. Kedi, kuşu kovalıyor. Kuş ağaca kaçıyor. Kedi mıyavlıyor. Murat gülüyor. Babası gelip Murat'a sarılıyor. Herkes mutlu! Güzel bir gün bitti.</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Hikayeyi Anladın mı? Soruları Cevapla!</h3>
+                
+                <div class="question-box">
+                    <p>1. Murat pencereden ne görüyor?</p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>2. Bahçede kim oynuyor?</p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>3. Murat nasıl hissediyordu?</p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 2 -->
+        <div class="section">
+            <div class="section-title">🔊 Bölüm 2: Ses Tanıma Oyunu</div>
+            
+            <div class="instruction-box">
+                <p>🎵 Aşağıdaki sesleri dinle ve ne olduğunu söyle!</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Hangi Ses Bu?</h3>
+                
+                <div class="question-box">
+                    <p>Ses 1: Kuş Sesi 🐦</p>
+                    <p><em>Bu ses ne? Kimin sesini duyuyor musun?</em></p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>Ses 2: Araba Sesi 🚗</p>
+                    <p><em>Bu ses ne? Nereden geliyor?</em></p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>Ses 3: Kapı Sesi 🚪</p>
+                    <p><em>Bu ses ne? Nerede oluyor?</em></p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>Ses 4: Yağmur Sesi 🌧️</p>
+                    <p><em>Bu ses ne? Ne hava var?</em></p>
+                    <input type="text" placeholder="Cevap yaz...">
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 3 -->
+        <div class="section">
+            <div class="section-title">🎤 Bölüm 3: Kendini Tanıt!</div>
+            
+            <div class="instruction-box">
+                <p>💬 Aşağıdaki cümleleri yüksek sesle söyle!</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Kendini Tanıt - Şablonlar</h3>
+                
+                <div class="speech-option">
+                    <strong>Şablon 1:</strong>
+                    <p>"Benim adım _______."</p>
+                    <input type="text" placeholder="Kendi adını yaz">
+                </div>
+                
+                <div class="speech-option">
+                    <strong>Şablon 2:</strong>
+                    <p>"Ben _______ yaşındayım."</p>
+                    <input type="text" placeholder="Kendi yaşını yaz">
+                </div>
+                
+                <div class="speech-option">
+                    <strong>Şablon 3:</strong>
+                    <p>"Ben _______ seviyorum."</p>
+                    <input type="text" placeholder="Sevdiğin bir şey yaz">
+                </div>
+                
+                <div class="speech-option">
+                    <strong>Şablon 4:</strong>
+                    <p>"Benim en iyi arkadaşım _______."</p>
+                    <input type="text" placeholder="Arkadaşının adını yaz">
+                </div>
+                
+                <div class="tip-box">
+                    <strong>💡 İpucu:</strong> Bu cümleleri yüksek ve açık sesle söyle. Harf harf doğru telaffuz et!
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 4 -->
+        <div class="section">
+            <div class="section-title">🖼️ Bölüm 4: Resimleri Anlat!</div>
+            
+            <div class="instruction-box">
+                <p>🎨 Aşağıdaki resimleri gör ve 2-3 cümle ile anlat!</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Resim 1: Oyun Oynayan Çocuklar</h3>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1503454537688-e6694e7faa3a?w=300" alt="Çocuklar oyun oynuyor">
+                </div>
+                <p><strong>Bu resimde ne yapılıyor? Anlat:</strong></p>
+                <textarea placeholder="Resimi anlat..."></textarea>
+                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Resim 2: Okul Sınıfı</h3>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1427504494785-405a6e4b69f0?w=300" alt="Sınıf">
+                </div>
+                <p><strong>Bu resimde ne görüyorsun? Anlat:</strong></p>
+                <textarea placeholder="Resimi anlat..."></textarea>
+                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Resim 3: Park</h3>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1552829099-81b06d6f8171?w=300" alt="Park">
+                </div>
+                <p><strong>Bu parkta neler var? Anlat:</strong></p>
+                <textarea placeholder="Resimi anlat..."></textarea>
+                <button onclick="alert('Harika anlatış! 🌟')">Gönder</button>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 5 -->
+        <div class="section">
+            <div class="section-title">❓ Bölüm 5: Soru-Cevap Oyunu</div>
+            
+            <div class="instruction-box">
+                <p>🗣️ Aşağıdaki soruları cevapla!</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Kendine Sorular</h3>
+                
+                <div class="question-box">
+                    <p>1️⃣ Adın ne?</p>
+                    <input type="text" placeholder="Cevap: ...">
+                </div>
+                
+                <div class="question-box">
+                    <p>2️⃣ Kaç yaşındasın?</p>
+                    <input type="text" placeholder="Cevap: ...">
+                </div>
+                
+                <div class="question-box">
+                    <p>3️⃣ En iyi arkadaşın kimdir?</p>
+                    <input type="text" placeholder="Cevap: ...">
+                </div>
+                
+                <div class="question-box">
+                    <p>4️⃣ Neyi seviyorsun?</p>
+                    <input type="text" placeholder="Cevap: ...">
+                </div>
+                
+                <div class="question-box">
+                    <p>5️⃣ Okulda ne yapıyorsun?</p>
+                    <input type="text" placeholder="Cevap: ...">
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 6 -->
+        <div class="section">
+            <div class="section-title">🌟 Bölüm 6: "Benim Favorim"</div>
+            
+            <div class="instruction-box">
+                <p>💬 Favori şeylerini söyle ve cümle yaz!</p>
+            </div>
+            
+            <div class="activity-box">
+                <h3>Favori Şeyler</h3>
+                
+                <div class="question-box">
+                    <p>Favori Rengim: </p>
+                    <input type="text" placeholder="Favori rengini yaz">
+                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori rengim mavi."</p>
+                </div>
+                
+                <div class="question-box">
+                    <p>Favori Hayvanım: </p>
+                    <input type="text" placeholder="Favori hayvanını yaz">
+                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori hayvanım köpek."</p>
+                </div>
+                
+                <div class="question-box">
+                    <p>Favori Yemeğim: </p>
+                    <input type="text" placeholder="Favori yemeğini yaz">
+                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori yemeğim makarna."</p>
+                </div>
+                
+                <div class="question-box">
+                    <p>Favori Oyunum: </p>
+                    <input type="text" placeholder="Favori oyununu yaz">
+                    <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Örnek: "Benim favori oyunum futbol."</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TAMAMLAMA -->
+        <div class="section">
+            <div class="section-title">🎊 Tüm Dersleri Tamamladın!</div>
+            <div class="activity-box">
+                <h2 style="color: #4facfe; text-align: center;">🏆 TEBRİKLER! 🏆</h2>
+                <p style="text-align: center; font-size: 1.1em; margin: 20px 0;">Türkçe dersinin 3 saatini başarıyla tamamladın!</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <p>✅ Ders 1: Okuma ve Anlama</p>
+                    <p>✅ Ders 2: Yazma ve İfade Etme</p>
+                    <p>✅ Ders 3: Dinleme ve Konuşma Becerisi</p>
+                </div>
+                
+                <p style="text-align: center; font-size: 1.1em; color: #4facfe; font-weight: bold;">Harika bir öğrenci oldun! 🌟⭐✨</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="window.location.href='index.html'">← Ana Sayfaya Dön</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
