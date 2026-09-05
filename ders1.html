@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 1: Okuma ve Anlama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .activity-box {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .text-box {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .question-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .question-box p {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .true-false-options {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .true-false-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .true-false-options label:hover {
+            background: #e0e0e0;
+        }
+        
+        .true-false-options input[type="radio"] {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+            display: block;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #999;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #666;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Geri Dön</a>
+        
+        <header>
+            <h1>📖 Ders 1: Okuma Becerisi ve Anlama</h1>
+            <p class="subtitle">⏱️ 40 Dakika</p>
+        </header>
+        
+        <!-- BÖLÜM 1 -->
+        <div class="section">
+            <div class="section-title">🎮 Bölüm 1: Kelime Oyunu (Isınma)</div>
+            <div class="activity-box">
+                <h3>Aşağıdaki resimleri gör ve kelimeyi yaz!</h3>
+                <p>Resime bakarak, altındaki boş alana kelimeyi yazabilir misin?</p>
+                
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1560807707-38cc1da91d3a?w=200" alt="Elma">
+                    <p><input type="text" placeholder="Kelimeyi yaz..."></p>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1444464666175-1469f18ae5e6?w=200" alt="Kuş">
+                    <p><input type="text" placeholder="Kelimeyi yaz..."></p>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45201b8d7e26?w=200" alt="Ev">
+                    <p><input type="text" placeholder="Kelimeyi yaz..."></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 2 -->
+        <div class="section">
+            <div class="section-title">📚 Bölüm 2: Metin Okuma - "Güneşli Bir Gün"</div>
+            <div class="text-box">
+                <p><strong>Güzel bir sabah. Güneş parlıyor.</strong></p>
+                <p><strong>Ayşe bahçeya gidiyor.</strong></p>
+                <p><strong>Burada çiçekler var.</strong></p>
+                <p><strong>Kırmızı çiçekler, sarı çiçekler.</strong></p>
+                <p><strong>Ayşe çiçeklere bakıyor.</strong></p>
+                <p><strong>Mutlu bir gün.</strong></p>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1490633874519-c21a7c4ff38f?w=400" alt="Bahçe ve çiçekler">
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 3 -->
+        <div class="section">
+            <div class="section-title">❓ Bölüm 3: Anlama Soruları</div>
+            
+            <div class="question-box">
+                <p>1. Sabah nasıldı?</p>
+                <div class="true-false-options">
+                    <label><input type="radio" name="q1"> Güzel ve parlak</label>
+                    <label><input type="radio" name="q1"> Bulutlu ve yağmurlu</label>
+                </div>
+            </div>
+            
+            <div class="question-box">
+                <p>2. Ayşe nereye gitti?</p>
+                <input type="text" placeholder="Cevap yaz...">
+            </div>
+            
+            <div class="question-box">
+                <p>3. Bahçede ne var?</p>
+                <div class="true-false-options">
+                    <label><input type="radio" name="q3"> Çiçekler</label>
+                    <label><input type="radio" name="q3"> Ağaçlar</label>
+                    <label><input type="radio" name="q3"> Oyuncaklar</label>
+                </div>
+            </div>
+            
+            <div class="question-box">
+                <p>4. Çiçekler hangi renkler?</p>
+                <input type="text" placeholder="Cevap yaz...">
+            </div>
+            
+            <div class="question-box">
+                <p>5. Ayşe nasıl hissediyordu?</p>
+                <div class="true-false-options">
+                    <label><input type="radio" name="q5"> Mutlu</label>
+                    <label><input type="radio" name="q5"> Üzgün</label>
+                    <label><input type="radio" name="q5"> Korkmuş</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 4 -->
+        <div class="section">
+            <div class="section-title">✅ Bölüm 4: Doğru / Yanlış</div>
+            
+            <div class="activity-box">
+                <p><strong>Aşağıdaki cümlelerin doğru mu, yanlış mı olduğunu söyle!</strong></p>
+                
+                <div class="question-box">
+                    <p>"Güneş parka gidiyor."</p>
+                    <div class="true-false-options">
+                        <label><input type="radio" name="gy1"> Doğru</label>
+                        <label><input type="radio" name="gy1"> Yanlış</label>
+                    </div>
+                </div>
+                
+                <div class="question-box">
+                    <p>"Çiçekler bahçada var."</p>
+                    <div class="true-false-options">
+                        <label><input type="radio" name="gy2"> Doğru</label>
+                        <label><input type="radio" name="gy2"> Yanlış</label>
+                    </div>
+                </div>
+                
+                <div class="question-box">
+                    <p>"Ayşe üzgün."</p>
+                    <div class="true-false-options">
+                        <label><input type="radio" name="gy3"> Doğru</label>
+                        <label><input type="radio" name="gy3"> Yanlış</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BÖLÜM 5 -->
+        <div class="section">
+            <div class="section-title">🔤 Bölüm 5: Eksik Kelimeyi Tamamla</div>
+            
+            <div class="activity-box">
+                <div class="question-box">
+                    <p>Cümleyi tamamla: "Güneş ______."</p>
+                    <input type="text" placeholder="Kelimeyi yaz...">
+                </div>
+                
+                <div class="question-box">
+                    <p>Cümleyi tamamla: "Çiçekler _____ ve _____."</p>
+                    <input type="text" placeholder="1. Kelime...">
+                    <input type="text" placeholder="2. Kelime...">
+                </div>
+                
+                <div class="question-box">
+                    <p>Cümleyi tamamla: "Ayşe _____ gidiyor."</p>
+                    <input type="text" placeholder="Kelimeyi yaz...">
+                </div>
+            </div>
+        </div>
+        
+        <!-- TAMAMLAMA -->
+        <div class="section">
+            <div class="section-title">🎉 Dersi Tamamla</div>
+            <div class="activity-box">
+                <p>Tebrikler! Ders 1'i tamamladın! 🌟</p>
+                <p>Artık Ders 2'ye geçebilirsin: Yazma Becerisi ve İfade Etme</p>
+                <button onclick="window.location.href='ders2.html'">Ders 2'ye Git →</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
